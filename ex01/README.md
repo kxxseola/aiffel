@@ -62,8 +62,14 @@ def loss(X, w, b, y):
     return L
      
 ```
-- [ ] 코드 작성자가 코드를 제대로 이해하고 작성했나요? (직접 인터뷰해보기)
-#위 항목에 대한 근거 작성 필수
+- [O] 코드 작성자가 코드를 제대로 이해하고 작성했나요? (직접 인터뷰해보기)
+drop과 [[]]을 썼을 때 차이를 아시나요?
+```
+df = pd.DataFrame(diabetes['data'], index=diabetes['target'], columns=diabetes['feature_names'])
+df_X_drop_bmi = df.drop('bmi', axis=1)
+```
+답변: drop은 자기 자신을 변경하고, 대괄호 2개 쓰는 표현은 새로운 데이터프레임을 반환한다.
+
 - [O] 코드가 간결한가요?
 아래의 항목들의 경우 충분히 간결하게 잘 작성되었다고 생각함.
 ```python
@@ -87,7 +93,6 @@ def MSE(x, y):
   mse = ((x - y)**2).mean()
   return mse
 ```
-
 
 ----------------------------------------------
 
@@ -114,4 +119,3 @@ for i, col in enumerate(['year', 'month', 'day', 'hour', 'minute', 'second']):
     sns.barplot(x=df[col], y=df['count'], ax=axs[i])
 ```
 
-- 
