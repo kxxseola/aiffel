@@ -24,7 +24,39 @@
 - ['x] **5. 코드가 간결한가요?**  
   코드를 보면 비슷한 내용인 함수를 두번씩 작성하셨는데 하나로 합칠 수 있어보입니다.  
   
+```
+#예시로 두 코드를 가져와봤는데 함수를 호출하기 이전 seg_color미리 계산하고 
+#함수 인자로 만들게된다면 하나의 함수로 만들 수 있어보입니다. 
+def make_seg_mask(image_list, output_list, seg_color):
+    img_mask_list = []
+    # img_show_list = image_list.copy()
+    
+    for i in range(len(image_list)):
+        output = output_list[i]
+        seg_map = np.all(output==seg_color, axis=-1) 
+        # True과 False인 값을 각각 255과 0으로 바꿔줍니다
+        img_mask = seg_map.astype(np.uint8) * 255
+        img_mask_list.append(img_mask)
+        
+    return img_mask_list
+    
+def make_seg_mask(image_list, output_list, segvalues_list, label_num):
+    img_mask_list = []
+    # img_show_list = image_list.copy()
+    
+    for i in range(len(image_list)):
+        output = output_list[i]
+        segvalues = segvalues_list[i]
+        seg_color = segvalues['class_colors'][segvalues['class_ids'].index(label_num)]
+        seg_color = seg_color[2::-1]    # bgr -> rgb
+        seg_map = np.all(output==seg_color, axis=-1) 
+        # True과 False인 값을 각각 255과 0으로 바꿔줍니다
+        img_mask = seg_map.astype(np.uint8) * 255
+        img_mask_list.append(img_mask)
+        
+    return img_mask_list
 
+```
 
 ## **참고링크 및 코드 개선 여부**  
 ------------------  
