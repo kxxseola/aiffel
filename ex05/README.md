@@ -26,7 +26,7 @@
   
 ```
 #예시로 두 코드를 가져와봤는데 함수를 호출하기 이전 seg_color미리 계산하고 
-#함수 인자로 만들게된다면 하나의 함수로 만들 수 있어보입니다. 
+#함수 인자로 받게된다면 하나의 함수로 만들 수 있어보입니다. 
 def make_seg_mask(image_list, output_list, seg_color):
     img_mask_list = []
     # img_show_list = image_list.copy()
