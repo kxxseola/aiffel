@@ -52,25 +52,25 @@ def preprocess_sentence(sentence, remove_stopwords=True):
 - [&#x2B55;] **5. 코드가 간결한가요?**  
   네, 주석이나 적절한 들여쓰기로 인해 읽기 편한 코드였습니다.
   ```python
-  # empty sample 확인 및 제거
-drop_train = [index for index, sentence in enumerate(decoder_input_train) if len(sentence) == 1]
-drop_test = [index for index, sentence in enumerate(decoder_input_test) if len(sentence) == 1]
+   # empty sample 확인 및 제거
+  drop_train = [index for index, sentence in enumerate(decoder_input_train) if len(sentence) == 1]
+  drop_test = [index for index, sentence in enumerate(decoder_input_test) if len(sentence) == 1]
 
-print('삭제할 훈련 데이터의 개수 :', len(drop_train))
-print('삭제할 테스트 데이터의 개수 :', len(drop_test))
+  print('삭제할 훈련 데이터의 개수 :', len(drop_train))
+  print('삭제할 테스트 데이터의 개수 :', len(drop_test))
 
-encoder_input_train = [sentence for index, sentence in enumerate(encoder_input_train) if index not in drop_train]
-decoder_input_train = [sentence for index, sentence in enumerate(decoder_input_train) if index not in drop_train]
-decoder_target_train = [sentence for index, sentence in enumerate(decoder_target_train) if index not in drop_train]
+  encoder_input_train = [sentence for index, sentence in enumerate(encoder_input_train) if index not in drop_train]
+  decoder_input_train = [sentence for index, sentence in enumerate(decoder_input_train) if index not in drop_train]
+  decoder_target_train = [sentence for index, sentence in enumerate(decoder_target_train) if index not in drop_train]
 
-encoder_input_test = [sentence for index, sentence in enumerate(encoder_input_test) if index not in drop_test]
-decoder_input_test = [sentence for index, sentence in enumerate(decoder_input_test) if index not in drop_test]
-decoder_target_test = [sentence for index, sentence in enumerate(decoder_target_test) if index not in drop_test]
+  encoder_input_test = [sentence for index, sentence in enumerate(encoder_input_test) if index not in drop_test]
+  decoder_input_test = [sentence for index, sentence in enumerate(decoder_input_test) if index not in drop_test]
+  decoder_target_test = [sentence for index, sentence in enumerate(decoder_target_test) if index not in drop_test]
 
-print('훈련 데이터의 개수 :', len(encoder_input_train))
-print('훈련 레이블의 개수 :', len(decoder_input_train))
-print('테스트 데이터의 개수 :', len(encoder_input_test))
-print('테스트 레이블의 개수 :', len(decoder_input_test))
+  print('훈련 데이터의 개수 :', len(encoder_input_train))
+  print('훈련 레이블의 개수 :', len(decoder_input_train))
+  print('테스트 데이터의 개수 :', len(encoder_input_test))
+  print('테스트 레이블의 개수 :', len(decoder_input_test))
   ```
 
 
