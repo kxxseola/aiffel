@@ -1,6 +1,6 @@
-# AIFFEL Exploration 07
+# AIFFEL Exploration
 ----  
-## **Code Peer Review 07**
+## **Code Peer Review**
 ------------------
 - 코더 : 김설아
 - 리뷰어 : 
