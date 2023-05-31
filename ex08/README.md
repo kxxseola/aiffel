@@ -1,6 +1,6 @@
 # AIFFEL Exploration 08
 ----  
-## **Code Peer Review 07**
+## **Code Peer Review 08**
 ------------------
 - 코더 : 김설아
 - 리뷰어 : 이동익
