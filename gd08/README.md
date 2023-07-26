@@ -1,5 +1,5 @@
 # AIFFEL GoingDeeper
-# Peer Review 이후 파일 수정 완료
+### [Peer Review 이후 파일 수정 완료]
 ----  
 ## **Code Peer Review**
 ------------------
